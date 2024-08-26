@@ -1,4 +1,4 @@
-# AthleteRecords
+# AthletesInformationSystem
 
 ## Overview
 The Athlete Information System is a web-based application designed to manage athlete information, tournaments, and achievements for a **specific sports club**. This system allows administrators to add, view, and manage data related to athletes and tournaments. It also provides a public interface to view information about athletes and their achievements.
