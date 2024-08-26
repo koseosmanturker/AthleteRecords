@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoş geldiniz</title>
+    <style>
+        body {
+            background-color: #8697C4;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: #ADBBDA;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #7091E6;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>İlbank Spor Kulübü Sporcu Bilgi Sistemine Hoş geldiniz</h1>
+        <button onclick="location.href='/admin_login'">Admin Login</button>
+        <button onclick="location.href='/information_page'">Bilgi Sistemi</button>
+    </div>
+</body>
+</html>

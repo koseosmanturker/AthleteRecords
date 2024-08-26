@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonuç Ekleme</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; 
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        select,
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            button:hover {
+                background-color: #0056b3; 
+            }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Sonuç Ekleme</h1>
+        <form action="{{ url_for('add_success') }}" method="post">
+            <label for="athlete_id">Sporcu:</label>
+            <select id="athlete_id" name="athlete_id" required>
+                {% for athlete in athletes %}
+                <option value="{{ athlete.id }}">{{ athlete.name }} {{ athlete.surname }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="tournament_id">Turnuva:</label>
+            <select id="tournament_id" name="tournament_id" required>
+                {% for tournament in tournaments %}
+                <option value="{{ tournament.id }}">{{ tournament.name }} - {{ tournament.date.strftime('%Y-%m-%d') }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="result">Sonuç:</label>
+            <input type="text" id="result" name="result" required>
+
+            <button type="submit">Sonucu Kaydet</button>
+        </form>
+    </div>
+</body>
+</html>

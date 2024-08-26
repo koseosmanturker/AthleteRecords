@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sporcu Ekleme</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; 
+        }
+        .form-container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; 
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Sporcu Kaydet</h1>
+        <form action="/add_athlete" method="POST">
+            <label for="athlete_name">Sporcunun Adı</label>
+            <input type="text" id="athlete_name" name="athlete_name" required>
+
+            <label for="athlete_surname">Soyadı</label>
+            <input type="text" id="athlete_surname" name="athlete_surname" required>
+
+            <label for="athlete_division">Kategori</label>
+            <input type="text" id="athlete_division" name="athlete_division" required>
+
+            <label for="athlete_category">Siklet</label>
+            <input type="text" id="athlete_category" name="athlete_category" required>
+
+            <button type="submit">Sporcuyu Kaydet</button>
+        </form>
+    </div>
+</body>
+</html>

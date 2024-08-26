@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sporcular</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align content at the top */
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #8697C4;
+            overflow-y: auto; /* Enable vertical scrolling */
+            padding-top: 20px; /* Add padding to avoid cutting off the top */
+        }
+
+        .athletes-container {
+            background-color: #ADBBDA;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: block;
+            padding: 10px;
+            background-color: #7091E6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+            a:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <div class="athletes-container">
+        <h1>Sporcular</h1>
+        <ul>
+            {% for athlete in athletes %}
+            <li>
+                <a href="{{ url_for('athlete_achievements', athlete_id=athlete.id) }}">
+                    {{ athlete.name }} {{ athlete.surname }} - {{ athlete.division }} - {{ athlete.category }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
